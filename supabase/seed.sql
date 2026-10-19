@@ -1,0 +1,3 @@
+-- Runs after migrations on `npm run db:reset`. Local development data only.
+-- Example:
+-- insert into public.profiles (id, display_name) values ('00000000-0000-0000-0000-000000000001', 'Dev User');

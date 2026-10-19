@@ -1,0 +1,15 @@
+---
+import Layout from '@layouts/Layout.astro';
+
+// Starting point. Replace freely; the template only guarantees the plumbing around it.
+const { user } = Astro.locals;
+---
+
+<Layout title="Astro template" description="Astro, Tailwind v4, Supabase and Vercel starter.">
+  <main class="mx-auto max-w-3xl px-6 py-16">
+    <h1 class="text-2xl font-semibold">Template ready.</h1>
+    <p class="mt-2">
+      Session: {user ? user.email : 'anonymous'}. Health: <a href="/api/health">/api/health</a>
+    </p>
+  </main>
+</Layout>

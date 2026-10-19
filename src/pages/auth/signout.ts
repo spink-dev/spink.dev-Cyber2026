@@ -7,8 +7,8 @@ import type { APIRoute } from 'astro';
  *   <form method="post" action="/auth/signout"><button>Sign out</button></form>
  */
 export const POST: APIRoute = async ({ locals, redirect }) => {
-  if (locals.supabase) {
-    await locals.supabase.auth.signOut();
-  }
-  return redirect('/', 303);
+    if (locals.supabase) {
+        await locals.supabase.auth.signOut();
+    }
+    return redirect('/', 303);
 };

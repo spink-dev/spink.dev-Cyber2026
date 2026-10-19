@@ -7,17 +7,17 @@ Everything here is plumbing. Components, pages and design are yours to write; th
 ## Start a new project
 
 1. On GitHub: **Use this template** (mark this repo as a template under Settings > General), or clone and re-init:
-   ```sh
-   git clone <this-repo> my-project && cd my-project
-   rm -rf .git && git init
-   ```
+    ```sh
+    git clone <this-repo> my-project && cd my-project
+    rm -rf .git && git init
+    ```
 2. Rename: `name` in `package.json`, `project_id` in `supabase/config.toml`, title in `src/pages/index.astro`.
 3. Install and run:
-   ```sh
-   npm ci
-   cp .env.example .env
-   npm run dev          # http://localhost:4321
-   ```
+    ```sh
+    npm ci
+    cp .env.example .env
+    npm run dev          # http://localhost:4321
+    ```
 4. Sanity check before the first commit: `npm run verify`.
 
 ## Scripts

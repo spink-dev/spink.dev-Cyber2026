@@ -9,8 +9,8 @@ import type { Database } from './database.types';
  * Use for: scheduled jobs, admin endpoints, webhooks, seeding.
  */
 export function createSupabaseAdminClient(): SupabaseClient<Database> | null {
-  if (!PUBLIC_SUPABASE_URL || !SUPABASE_SECRET_KEY) return null;
-  return createClient<Database>(PUBLIC_SUPABASE_URL, SUPABASE_SECRET_KEY, {
-    auth: { autoRefreshToken: false, persistSession: false },
-  });
+    if (!PUBLIC_SUPABASE_URL || !SUPABASE_SECRET_KEY) return null;
+    return createClient<Database>(PUBLIC_SUPABASE_URL, SUPABASE_SECRET_KEY, {
+        auth: { autoRefreshToken: false, persistSession: false },
+    });
 }

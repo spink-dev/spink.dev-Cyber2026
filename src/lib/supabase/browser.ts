@@ -14,8 +14,8 @@ let client: SupabaseClient<Database> | null | undefined;
  *   const supabase = getSupabaseBrowserClient();
  */
 export function getSupabaseBrowserClient(): SupabaseClient<Database> | null {
-  if (client !== undefined) return client;
-  const env = getSupabaseEnv();
-  client = env ? createBrowserClient<Database>(env.url, env.publishableKey) : null;
-  return client;
+    if (client !== undefined) return client;
+    const env = getSupabaseEnv();
+    client = env ? createBrowserClient<Database>(env.url, env.publishableKey) : null;
+    return client;
 }

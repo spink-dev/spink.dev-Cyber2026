@@ -5,9 +5,9 @@ import type { Database } from './database.types';
 import { getSupabaseEnv } from './env';
 
 type ServerContext = {
-  request: Request;
-  cookies: AstroCookies;
-  response?: { headers: Headers };
+    request: Request;
+    cookies: AstroCookies;
+    response?: { headers: Headers };
 };
 
 /**
@@ -18,26 +18,24 @@ type ServerContext = {
  * Call this directly only where locals are not available.
  */
 export function createSupabaseServerClient(ctx: ServerContext): SupabaseClient<Database> | null {
-  const env = getSupabaseEnv();
-  if (!env) return null;
+    const env = getSupabaseEnv();
+    if (!env) return null;
 
-  return createServerClient<Database>(env.url, env.publishableKey, {
-    cookies: {
-      getAll() {
-        return parseCookieHeader(ctx.request.headers.get('Cookie') ?? '').map(
-          ({ name, value }) => ({ name, value: value ?? '' }),
-        );
-      },
-      setAll(cookiesToSet, headers) {
-        for (const { name, value, options } of cookiesToSet) {
-          ctx.cookies.set(name, value, { ...options, path: options.path ?? '/' });
-        }
-        if (ctx.response && headers) {
-          for (const [key, value] of Object.entries(headers)) {
-            ctx.response.headers.set(key, value);
-          }
-        }
-      },
-    },
-  });
+    return createServerClient<Database>(env.url, env.publishableKey, {
+        cookies: {
+            getAll() {
+                return parseCookieHeader(ctx.request.headers.get('Cookie') ?? '').map(({ name, value }) => ({ name, value: value ?? '' }));
+            },
+            setAll(cookiesToSet, headers) {
+                for (const { name, value, options } of cookiesToSet) {
+                    ctx.cookies.set(name, value, { ...options, path: options.path ?? '/' });
+                }
+                if (ctx.response && headers) {
+                    for (const [key, value] of Object.entries(headers)) {
+                        ctx.response.headers.set(key, value);
+                    }
+                }
+            },
+        },
+    });
 }

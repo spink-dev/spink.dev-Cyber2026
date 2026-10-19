@@ -9,17 +9,17 @@ import { createSupabaseServerClient } from '@lib/supabase/server';
  *   if (Astro.url.pathname.startsWith('/app') && !Astro.locals.user) return Astro.redirect('/login');
  */
 export const onRequest = defineMiddleware(async (context, next) => {
-  const supabase = createSupabaseServerClient(context);
-  context.locals.supabase = supabase;
-  context.locals.user = null;
+    const supabase = createSupabaseServerClient(context);
+    context.locals.supabase = supabase;
+    context.locals.user = null;
 
-  if (supabase && !context.isPrerendered) {
-    // getUser() validates the JWT against Supabase Auth. Do not trust getSession() on the server.
-    const {
-      data: { user },
-    } = await supabase.auth.getUser();
-    context.locals.user = user;
-  }
+    if (supabase && !context.isPrerendered) {
+        // getUser() validates the JWT against Supabase Auth. Do not trust getSession() on the server.
+        const {
+            data: { user },
+        } = await supabase.auth.getUser();
+        context.locals.user = user;
+    }
 
-  return next();
+    return next();
 });

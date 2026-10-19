@@ -1,14 +1,15 @@
 {
-  "printWidth": 100,
-  "singleQuote": true,
-  "semi": true,
-  "trailingComma": "all",
-  "plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
-  "tailwindStylesheet": "./src/styles/global.css",
-  "overrides": [
-    {
-      "files": "*.astro",
-      "options": { "parser": "astro" }
-    }
-  ]
+    "printWidth": 200,
+    "singleQuote": true,
+    "tabWidth": 4,
+    "semi": true,
+    "trailingComma": "all",
+    "plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
+    "tailwindStylesheet": "./src/styles/global.css",
+    "overrides": [
+        {
+            "files": "*.astro",
+            "options": { "parser": "astro" }
+        }
+    ]
 }

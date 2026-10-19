@@ -6,24 +6,24 @@
  * https://tailwindcss.com/docs/theme
  */
 @theme {
-  /* --font-sans: 'Your Font', ui-sans-serif, system-ui, sans-serif; */
-  /* --color-accent: #ff5a1f; */
+    /* --font-sans: 'Your Font', ui-sans-serif, system-ui, sans-serif; */
+    /* --color-accent: #ff5a1f; */
 }
 
 /* Project-wide base styles. Keep this short; components own their own styling. */
 @layer base {
-  html {
-    scroll-behavior: smooth;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-      scroll-behavior: auto !important;
+    html {
+        scroll-behavior: smooth;
     }
-  }
+
+    @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+        }
+    }
 }

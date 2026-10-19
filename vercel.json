@@ -1,9 +1,9 @@
 {
-  "$schema": "https://json-schema.org/draft-04/schema",
-  "framework": "astro",
-  "installCommand": "npm ci",
-  "buildCommand": "npm run build",
-  "github": {
-    "silent": true
-  }
+    "$schema": "https://json-schema.org/draft-04/schema",
+    "framework": "astro",
+    "installCommand": "npm ci",
+    "buildCommand": "npm run build",
+    "github": {
+        "silent": true
+    }
 }

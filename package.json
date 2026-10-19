@@ -35,7 +35,7 @@
     },
     "dependencies": {
         "@astrojs/sitemap": "^3.7.4",
-        "@astrojs/vercel": "^11.0.10",
+        "@astrojs/vercel": "^11.0.15",
         "@supabase/ssr": "^0.12.6",
         "@supabase/supabase-js": "^2.115.0",
         "@tailwindcss/vite": "^4.3.3",
